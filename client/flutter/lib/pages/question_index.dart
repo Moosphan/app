@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:WHOFlutter/api/question_data.dart';
+import 'package:WHOFlutter/api/content/dynamic_content.dart';
 import 'package:WHOFlutter/components/page_scaffold/page_scaffold.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -46,6 +46,7 @@ class _QuestionIndexPageState extends State<QuestionIndexPage> {
       return;
     }
     _questions = await widget.dataSource(context);
+    if (!mounted) { return; }
     setState(() {});
   }
 
